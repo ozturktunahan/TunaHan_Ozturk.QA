@@ -10,3 +10,5 @@ The features in this project are implemented based on the tasks received via ema
 - **WebDriverManager 5.9.2**
 
 ** If any test fails, a screenshot is automatically saved in the Fail Test Screenshot/ folder.
+
+Source(s) : https://www.udemy.com/course/selenium-ile-test-otomasyonuj-unit-test-ng-cucumber-bdd/
