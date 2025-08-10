@@ -1,10 +1,12 @@
 package com.tunahanozturk.tests;
 
 import com.tunahanozturk.base.DriverFactory;
+import com.tunahanozturk.utils.ScreenshotUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import static org.testng.Assert.assertTrue;
 
@@ -19,7 +21,10 @@ public class NavigateToCareersTest {
     }
 
     @AfterMethod(alwaysRun = true)
-    public void tearDown() {
+    public void tearDown(ITestResult result) {
+        if (result.getStatus() == ITestResult.FAILURE) {
+            ScreenshotUtil.takeScreenshot(driver, result.getName());
+        }
         DriverFactory.quit();
     }
 
